@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Hazırlama Aracı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="ust-serit"><h1>CV Hazırlama Aracı</h1></header>
+    <div class="ana-kapsayici">
+        <aside class="ayar-paneli">
+            <div class="sutun">
+                <h3>Metin İçerikleri</h3>
+                <div class="input-grubu">
+                    <label class="ana-baslik">İsim Kutusu</label>
+                    <div class="satir"><span>Ad Soyad:</span><input type="text" id="in-ad"></div>
+                    <div class="satir"><span>Unvan:</span><input type="text" id="in-unvan"></div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">İletişim Bilgileri</label>
+                    <div class="satir"><span>Telefon:</span><input type="text" id="in-tel"></div>
+                    <div class="satir"><span>Mail:</span><input type="text" id="in-mail"></div>
+                    <div class="satir"><span>Web:</span><input type="text" id="in-web"></div>
+                    <div class="satir"><span>Adres:</span><textarea id="in-adres"></textarea></div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Eğitim Bilgileri</label>
+                    <div class="satir"><span>Açıklama:</span><textarea id="in-egitim-ozet"></textarea></div>
+                    <div class="satir">
+                        <span>Okul Sayısı:</span>
+                        <select id="okul-sayisi">
+                            <option value="0">Seçiniz</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div id="okul-girdi-alani"></div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Yetenekler</label>
+                    <div class="satir"><span>Açıklama:</span><textarea id="in-yetenek-ozet"></textarea></div>
+                    <div class="satir">
+                        <span>Yetenek Sayısı:</span>
+                        <select id="yet-sayisi">
+                            <option value="0">Seçiniz</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div id="yet-girdi-alani"></div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Hakkımda</label>
+                    <div class="satir"><span>Açıklama:</span><textarea id="in-hakkimda"></textarea></div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">İş Deneyimi</label>
+                    <div class="satir"><span>Açıklama:</span><textarea id="in-is"></textarea></div>
+                </div>
+            </div>
+
+            <div class="sutun">
+                <h3>Görünüş</h3>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Renkler</label>
+                    <div class="satir"><span>Arkaplan Rengi:</span><input type="color" id="renk-arka" value="#cc1d1d"></div>
+                    <div class="satir"><span>Sol Kolon Rengi:</span><input type="color" id="renk-sol" value="#b31d1d"></div>
+                    <div class="satir"><span>İsim Kutusu Rengi:</span><input type="color" id="renk-isim-kutu" value="#333333"></div>
+                    <div class="satir"><span>İsim Kutusu Yazı Rengi:</span><input type="color" id="renk-isim-yazi" value="#ffffff"></div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Yazı Tipi</label>
+                    <div class="satir">
+                        <span>Yazı Tipi:</span>
+                        <select id="sel-font">
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Fotoğraf</label>
+                    <div class="satir">
+                        <span>Fotoğraf Çerçevesi Şekli:</span>
+                        <select id="sel-foto">
+                            <option value="50%">Daire</option>
+                            <option value="0%">Kare</option>
+                            <option value="20px">Oval</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-grubu">
+                    <label class="ana-baslik">Başlık Altı Çizgileri</label>
+                    <div class="satir"><span>Çizgi Rengi:</span><input type="color" id="renk-cizgi" value="#000000"></div>
+                    <div class="satir">
+                        <span>Çizgi Şekli:</span>
+                        <select id="sel-cizgi">
+                            <option value="solid">Düz</option>
+                            <option value="dotted">Noktalı</option>
+                            <option value="dashed">Kesikli</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="cv-onizleme" id="cv-zemin">
+            <div class="cv-sol" id="cv-sol-panel">
+                <div class="foto-kutu" id="cv-foto">FOTOĞRAF</div>
+                <div class="cv-bolum">
+                    <h4 class="baslik">İLETİŞİM</h4>
+                    <p id="out-tel">[ Telefon ]</p><p id="out-mail">[ Mail ]</p><p id="out-web">[ Web ]</p><p id="out-adres">[ Adres ]</p>
+                </div>
+                <div class="cv-bolum">
+                    <h4 class="baslik">EĞİTİM</h4>
+                    <p id="out-egitim-ozet"></p><div id="out-okul-liste"></div>
+                </div>
+                <div class="cv-bolum">
+                    <h4 class="baslik">YETENEKLER</h4>
+                    <p id="out-yetenek-ozet"></p><div id="out-yet-liste"></div>
+                </div>
+            </div>
+            <div class="cv-sag">
+                <div class="isim-kutusu" id="cv-isim-bg">
+                    <h2 id="out-ad">{ AD SOYAD }</h2><p id="out-unvan">{ UNVAN }</p>
+                </div>
+                <div class="icerik-alani">
+                    <div class="blog">
+                        <h4 class="baslik">HAKKIMDA</h4><p id="out-hakkimda">[ AÇIKLAMA ]</p>
+                    </div>
+                    <div class="blog">
+                        <h4 class="baslik">İŞ DENEYİMİ</h4><p id="out-is">[ AÇIKLAMA ]</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

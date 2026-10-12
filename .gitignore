@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vs/
+.vscode/
+.env
+.claude/
+CLAUDE.md
+.DS_Store
+Thumbs.db
+desktop.ini
