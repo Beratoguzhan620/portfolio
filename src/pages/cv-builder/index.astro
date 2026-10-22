@@ -1,0 +1,10 @@
+---
+import CvBuilder from "../../components/cv/CvBuilder.astro";
+import { cvText } from "../../i18n/cv";
+import Base from "../../layouts/Base.astro";
+import "../../styles/cv.css";
+---
+
+<Base lang="tr" title={cvText.tr.metaTitle} description={cvText.tr.metaDescription} path="cv-builder/">
+  <CvBuilder lang="tr" />
+</Base>
