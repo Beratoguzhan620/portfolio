@@ -38,6 +38,9 @@ jobs:
           for i in $(seq 1 30); do curl -sf http://localhost:4321/portfolio/ > /dev/null && break; sleep 1; done
           pnpm test:e2e
 
+      - name: Lighthouse (performance and accessibility 95+)
+        run: pnpm lighthouse
+
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
