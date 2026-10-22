@@ -1,0 +1,94 @@
+---
+import { categories, projects } from "../data/projects";
+import { type Lang, t } from "../i18n/ui";
+import ProjectCard from "./ProjectCard.astro";
+
+const { lang } = Astro.props as { lang: Lang };
+const filters = [
+  { value: "all", label: t(lang, "projects.all"), count: projects.length },
+  ...categories.map((category) => ({
+    value: category,
+    label: t(lang, `projects.${category}`),
+    count: projects.filter((project) => project.category === category).length,
+  })),
+];
+---
+
+<section id="projects" class="section" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="projects-title">{t(lang, "nav.projects")}</h2>
+      <p class="muted">{t(lang, "projects.lead")}</p>
+    </div>
+
+    <div class="filters" role="group" aria-label={t(lang, "projects.filter")} data-filters>
+      {filters.map((filter, index) => (
+        <button type="button" class="chip" data-filter={filter.value} aria-pressed={index === 0 ? "true" : "false"}>
+          {filter.label} <span class="count">{filter.count}</span>
+        </button>
+      ))}
+    </div>
+    <p class="sr-only" aria-live="polite" data-status></p>
+
+    <div class="grid" data-grid>
+      {projects.map((project, index) => <ProjectCard project={project} lang={lang} eager={index < 2} />)}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Progressive enhancement: without JavaScript every project stays visible.
+  const group = document.querySelector<HTMLElement>("[data-filters]");
+  const cards = [...document.querySelectorAll<HTMLElement>("[data-grid] [data-category]")];
+  const status = document.querySelector<HTMLElement>("[data-status]");
+  const word = document.documentElement.lang === "tr" ? "proje" : "projects";
+
+  group?.addEventListener("click", (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>("button[data-filter]");
+    if (!button) return;
+    const filter = button.dataset.filter;
+    for (const other of group.querySelectorAll("button")) other.setAttribute("aria-pressed", String(other === button));
+    let shown = 0;
+    for (const card of cards) {
+      const match = filter === "all" || card.dataset.category === filter;
+      card.hidden = !match;
+      if (match) shown += 1;
+    }
+    if (status) status.textContent = `${shown} ${word}`;
+  });
+</script>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .chip {
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font: 500 14px/1 var(--sans);
+    cursor: pointer;
+  }
+  .chip[aria-pressed="true"] {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+  }
+  .count {
+    font-family: var(--mono);
+    font-size: 12px;
+    opacity: 0.7;
+    margin-left: 4px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 20px;
+  }
+</style>

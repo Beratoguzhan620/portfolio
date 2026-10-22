@@ -1,10 +1,19 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+.astro/
+
+# End-to-end output
+tests/e2e/output/
+
+# Editors / env
 .vs/
 .vscode/
 .env
-.claude/
-CLAUDE.md
+
+# OS
 .DS_Store
 Thumbs.db
 desktop.ini

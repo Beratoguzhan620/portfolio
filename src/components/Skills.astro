@@ -1,0 +1,49 @@
+---
+import { skills } from "../data/skills";
+import { type Lang, t } from "../i18n/ui";
+
+const { lang } = Astro.props as { lang: Lang };
+---
+
+<section id="skills" class="section" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="skills-title">{t(lang, "skills.title")}</h2>
+    </div>
+    <div class="groups">
+      {skills.map((group) => (
+        <div class="group">
+          <h3>{group.title[lang]}</h3>
+          <ul>
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 32px;
+  }
+  h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  li {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+</style>
