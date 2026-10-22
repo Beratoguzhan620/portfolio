@@ -1,0 +1,58 @@
+---
+import { type Lang, t } from "../i18n/ui";
+
+const { lang } = Astro.props as { lang: Lang };
+const email = "beratoguzhan620@gmail.com";
+---
+
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="container contact">
+    <div class="section-head">
+      <h2 id="contact-title">{t(lang, "contact.title")}</h2>
+      <p class="muted">{t(lang, "contact.lead")}</p>
+    </div>
+    <ul class="channels">
+      <li>
+        <span class="label">E-mail</span>
+        <a href={`mailto:${email}`}>{email}</a>
+      </li>
+      <li>
+        <span class="label">GitHub</span>
+        <a href="https://github.com/Beratoguzhan620" rel="me">github.com/Beratoguzhan620</a>
+      </li>
+    </ul>
+    <a class="button button--primary" href={`mailto:${email}`}>{t(lang, "contact.email")}</a>
+  </div>
+</section>
+
+<style>
+  .contact {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+  }
+  .channels {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+  }
+  .channels li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .label {
+    font: 400 13px/1.5 var(--mono);
+    color: var(--text-muted);
+  }
+  .channels a {
+    overflow-wrap: anywhere;
+    text-underline-offset: 4px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import Base from "../layouts/Base.astro";
+import { href, t } from "../i18n/ui";
+---
+
+<Base lang="tr" title={`${t("tr", "notfound.title")} · Berat Oğuzhan Turğut`}>
+  <section class="container notfound">
+    <h1>{t("tr", "notfound.title")}</h1>
+    <p class="muted">{t("tr", "notfound.body")}</p>
+    <p class="muted" lang="en">{t("en", "notfound.body")}</p>
+    <a class="button button--primary" href={href("tr")}>{t("tr", "notfound.home")}</a>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    display: grid;
+    justify-items: start;
+    gap: 12px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+</style>

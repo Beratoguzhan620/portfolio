@@ -1,0 +1,38 @@
+---
+import { type Lang, t } from "../i18n/ui";
+
+const { lang } = Astro.props as { lang: Lang };
+---
+
+<section id="about" class="section" aria-labelledby="about-title">
+  <div class="container about">
+    <h2 id="about-title">{t(lang, "about.title")}</h2>
+    <div class="text">
+      {t(lang, "about.body").map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 32px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .text {
+    display: grid;
+    gap: 16px;
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  @media (max-width: 760px) {
+    .about {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>
