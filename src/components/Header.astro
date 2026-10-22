@@ -24,6 +24,11 @@ const links = [
           </li>
         ))}
         <li>
+          <a href={href(lang, "cv-builder/")} aria-current={path === "cv-builder/" ? "page" : undefined}>
+            {t(lang, "nav.cv")}
+          </a>
+        </li>
+        <li>
           <a class="lang" href={href(other, path)} hreflang={other} lang={other} aria-label={`${t(lang, "nav.language")}: ${languages[other]}`}>
             {other.toUpperCase()}
           </a>
