@@ -1,0 +1,97 @@
+---
+import { href, type Lang, languages, otherLang, t } from "../i18n/ui";
+
+type Props = { lang: Lang; path: string };
+const { lang, path } = Astro.props;
+const home = href(lang);
+const other = otherLang(lang);
+const links = [
+  { label: t(lang, "nav.projects"), href: `${home}#projects` },
+  { label: t(lang, "nav.skills"), href: `${home}#skills` },
+  { label: t(lang, "nav.about"), href: `${home}#about` },
+  { label: t(lang, "nav.contact"), href: `${home}#contact` },
+];
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href={home}>Berat Oğuzhan Turğut</a>
+    <nav aria-label={lang === "tr" ? "Ana menü" : "Main menu"}>
+      <ul>
+        {links.map((link) => (
+          <li class="hide-sm">
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+        <li>
+          <a class="lang" href={href(other, path)} hreflang={other} lang={other} aria-label={`${t(lang, "nav.language")}: ${languages[other]}`}>
+            {other.toUpperCase()}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 60px;
+  }
+  .brand {
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 10px;
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 15px;
+  }
+  nav a:hover,
+  nav a[aria-current="page"] {
+    color: var(--text);
+  }
+  nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+  .lang {
+    font-family: var(--mono);
+    font-size: 13px;
+    border: 1px solid var(--border);
+    min-height: 32px;
+    margin-left: 4px;
+  }
+  @media (max-width: 760px) {
+    .hide-sm {
+      display: none;
+    }
+    .brand {
+      font-size: 15px;
+    }
+  }
+</style>
