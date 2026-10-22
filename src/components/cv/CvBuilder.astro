@@ -1,0 +1,188 @@
+---
+import { ACCENTS, LIMITS } from "../../lib/cv";
+import { cvText } from "../../i18n/cv";
+import type { Lang } from "../../i18n/ui";
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const x = cvText[lang];
+const f = x.fields;
+---
+
+<div class="builder" data-builder data-lang={lang} data-view="edit">
+  <div class="intro container">
+    <h1>{x.title}</h1>
+    <p class="muted">{x.lead}</p>
+  </div>
+
+  <div class="toolbar container">
+    <div class="tabs" role="tablist" aria-label={x.title}>
+      <button type="button" role="tab" id="tab-edit" aria-controls="cv-form" aria-selected="true" data-tab="edit">{x.edit}</button>
+      <button type="button" role="tab" id="tab-preview" aria-controls="cv-preview" aria-selected="false" data-tab="preview">{x.preview}</button>
+    </div>
+    <div class="actions">
+      <button type="button" class="button button--primary" data-action="print">{x.download}</button>
+      <button type="button" class="button" data-action="sample">{x.sample}</button>
+      <button type="button" class="button" data-action="clear">{x.clear}</button>
+    </div>
+    <p class="status muted" role="status" aria-live="polite" data-status></p>
+  </div>
+
+  <div class="workspace container">
+    <form id="cv-form" class="form" role="tabpanel" aria-labelledby="tab-edit" data-form novalidate>
+      <fieldset>
+        <legend>{x.groups.look}</legend>
+        <div class="choice-row" role="radiogroup" aria-label={x.template}>
+          <span class="label">{x.template}</span>
+          {(["classic", "sidebar"] as const).map((value) => (
+            <label class="choice">
+              <input type="radio" name="template" value={value} data-field="template" />
+              <span>{x.templates[value]}</span>
+            </label>
+          ))}
+        </div>
+        <div class="choice-row" role="radiogroup" aria-label={x.accent}>
+          <span class="label">{x.accent}</span>
+          {ACCENTS.map((color) => (
+            <label class="swatch" title={color}>
+              <input type="radio" name="accent" value={color} data-field="accent" aria-label={color} />
+              <span style={`--swatch:${color}`}></span>
+            </label>
+          ))}
+          <label class="custom-color">
+            <span class="sr-only">{x.customAccent}</span>
+            <input type="color" data-custom-accent />
+          </label>
+        </div>
+        <div class="grid-2">
+          <label class="field">
+            <span>{x.font}</span>
+            <select data-field="font">
+              <option value="sans">{x.fonts.sans}</option>
+              <option value="serif">{x.fonts.serif}</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>{x.photoShape}</span>
+            <select data-field="photoShape">
+              <option value="circle">{x.shapes.circle}</option>
+              <option value="rounded">{x.shapes.rounded}</option>
+              <option value="square">{x.shapes.square}</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{x.groups.personal}</legend>
+        <div class="grid-2">
+          <label class="field"><span>{f.name}</span><input type="text" data-field="name" autocomplete="name" maxlength="80" /></label>
+          <label class="field"><span>{f.title}</span><input type="text" data-field="title" autocomplete="organization-title" maxlength="80" /></label>
+          <label class="field"><span>{f.email}</span><input type="email" data-field="email" autocomplete="email" maxlength="120" /></label>
+          <label class="field"><span>{f.phone}</span><input type="tel" data-field="phone" autocomplete="tel" maxlength="40" /></label>
+          <label class="field"><span>{f.location}</span><input type="text" data-field="location" maxlength="80" /></label>
+          <label class="field"><span>{f.website}</span><input type="text" data-field="website" autocomplete="url" maxlength="120" /></label>
+        </div>
+        <div class="photo">
+          <div class="field">
+            <span>{x.photo}</span>
+            <label class="button file-button">
+              {x.choosePhoto}
+              <input type="file" accept="image/png,image/jpeg,image/webp" class="sr-only" data-photo-input />
+            </label>
+            <small class="muted">{x.photoHint}</small>
+          </div>
+          <button type="button" class="link-button" data-action="remove-photo" hidden>{x.photoRemove}</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>{x.groups.summary}</legend>
+        <label class="field"><span>{f.summary}</span><textarea data-field="summary" rows="4" maxlength="1200"></textarea></label>
+      </fieldset>
+
+      {(["experience", "education", "languages"] as const).map((list) => (
+        <fieldset>
+          <legend>{x.groups[list]}</legend>
+          <ol class="items" data-list={list}></ol>
+          <button type="button" class="button" data-add={list} data-limit={LIMITS[list]}>+ {x.add[list]}</button>
+        </fieldset>
+      ))}
+
+      <fieldset>
+        <legend>{x.groups.skills}</legend>
+        <label class="field">
+          <span>{f.skills}</span>
+          <textarea data-skills rows="2"></textarea>
+          <small class="muted">{f.skillsHint}</small>
+        </label>
+      </fieldset>
+
+      <fieldset class="data">
+        <button type="button" class="link-button" data-action="export">{x.exportJson}</button>
+        <label class="link-button file-button">
+          {x.importJson}
+          <input type="file" accept="application/json,.json" class="sr-only" data-import />
+        </label>
+      </fieldset>
+    </form>
+
+    <section id="cv-preview" class="preview" role="tabpanel" aria-labelledby="tab-preview" data-preview-wrap>
+      <p class="hint muted">{x.downloadHint}</p>
+      <div class="sheet-frame" data-frame>
+        <article class="sheet" aria-label={x.pageLabel} data-sheet></article>
+      </div>
+    </section>
+  </div>
+
+  <template data-template="experience">
+    <li class="item">
+      <div class="item-head"><strong data-item-title>{x.item.experience}</strong><button type="button" class="link-button" data-remove>{x.remove}</button></div>
+      <div class="grid-2">
+        <label class="field"><span>{f.role}</span><input type="text" data-key="role" maxlength="80" /></label>
+        <label class="field"><span>{f.company}</span><input type="text" data-key="company" maxlength="80" /></label>
+        <label class="field"><span>{f.start}</span><input type="text" data-key="start" maxlength="20" /></label>
+        <label class="field"><span>{f.end}</span><input type="text" data-key="end" maxlength="20" /></label>
+      </div>
+      <label class="field"><span>{f.description}</span><textarea data-key="description" rows="3" maxlength="800"></textarea></label>
+    </li>
+  </template>
+  <template data-template="education">
+    <li class="item">
+      <div class="item-head"><strong data-item-title>{x.item.education}</strong><button type="button" class="link-button" data-remove>{x.remove}</button></div>
+      <div class="grid-2">
+        <label class="field"><span>{f.school}</span><input type="text" data-key="school" maxlength="100" /></label>
+        <label class="field"><span>{f.degree}</span><input type="text" data-key="degree" maxlength="100" /></label>
+        <label class="field"><span>{f.start}</span><input type="text" data-key="start" maxlength="20" /></label>
+        <label class="field"><span>{f.end}</span><input type="text" data-key="end" maxlength="20" /></label>
+      </div>
+    </li>
+  </template>
+  <template data-template="languages">
+    <li class="item">
+      <div class="item-head"><strong data-item-title>{x.item.languages}</strong><button type="button" class="link-button" data-remove>{x.remove}</button></div>
+      <div class="grid-2">
+        <label class="field"><span>{f.language}</span><input type="text" data-key="name" maxlength="40" /></label>
+        <label class="field"><span>{f.level}</span><input type="text" data-key="level" maxlength="40" /></label>
+      </div>
+    </li>
+  </template>
+
+  <dialog class="confirm" data-confirm aria-labelledby="confirm-title">
+    <h2 id="confirm-title" data-confirm-title></h2>
+    <p class="muted" data-confirm-body></p>
+    <div class="confirm-actions">
+      <button type="button" class="button button--danger" data-confirm-yes>{x.confirm}</button>
+      <button type="button" class="button" data-confirm-no>{x.cancel}</button>
+    </div>
+  </dialog>
+
+  <script type="application/json" data-text set:html={JSON.stringify(x)} />
+</div>
+
+<script>
+  import { startBuilder } from "../../lib/cv-app";
+
+  const root = document.querySelector<HTMLElement>("[data-builder]");
+  if (root) startBuilder(root);
+</script>

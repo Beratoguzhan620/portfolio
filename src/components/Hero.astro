@@ -1,5 +1,5 @@
 ---
-import { type Lang, t } from "../i18n/ui";
+import { href, type Lang, t } from "../i18n/ui";
 
 const { lang } = Astro.props as { lang: Lang };
 ---
@@ -10,6 +10,7 @@ const { lang } = Astro.props as { lang: Lang };
   <p class="intro">{t(lang, "hero.intro")}</p>
   <div class="actions">
     <a class="button button--primary" href="#projects">{t(lang, "hero.projects")}</a>
+    <a class="button" href={href(lang, "cv-builder/")}>{t(lang, "hero.cv")}</a>
     <a class="button" href="https://github.com/Beratoguzhan620" rel="me">GitHub</a>
   </div>
 </section>
