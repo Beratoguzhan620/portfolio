@@ -30,6 +30,8 @@ export type Project = {
 
 const GITHUB = "https://github.com/Beratoguzhan620";
 
+// Web demos published from each repository to GitHub Pages.
+
 export const projects: Project[] = [
   {
     slug: "marketly",
@@ -121,6 +123,7 @@ export const projects: Project[] = [
     image: kawaiiFriend,
     frame: "phone",
     repo: `${GITHUB}/kawaii-friend`,
+    demo: "https://beratoguzhan620.github.io/kawaii-friend/",
   },
   {
     slug: "cafe-map",
@@ -134,6 +137,7 @@ export const projects: Project[] = [
     image: cafeMap,
     frame: "phone",
     repo: `${GITHUB}/cafe-map`,
+    demo: "https://beratoguzhan620.github.io/cafe-map/",
   },
   {
     slug: "cinelist",
@@ -160,6 +164,7 @@ export const projects: Project[] = [
     image: bugunNeYapalim,
     frame: "phone",
     repo: `${GITHUB}/bugun-ne-yapalim`,
+    demo: "https://beratoguzhan620.github.io/bugun-ne-yapalim/",
   },
   {
     slug: "student-cli",

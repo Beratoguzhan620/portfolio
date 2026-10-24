@@ -41,9 +41,13 @@ for (const [device, viewport, scheme] of [
 
   await step(`${device}: every project card links to its repository`, async () => {
     const links = await page.locator("[data-grid] article a").evaluateAll((els) => els.map((el) => el.href));
-    if (links.length < 11 || !links.every((link) => link.startsWith("https://github.com/Beratoguzhan620/"))) {
+    const code = links.filter((link) => link.startsWith("https://github.com/Beratoguzhan620/"));
+    const demos = links.filter((link) => link.startsWith("https://beratoguzhan620.github.io/"));
+    if (code.length < 11 || code.length + demos.length !== links.length) {
       throw new Error(`unexpected links: ${links.join(", ")}`);
     }
+    if (demos.length < 3) throw new Error(`expected the mobile apps to link their demos, got ${demos.length}`);
+    await page.getByRole("link", { name: "Canlı demo: CafeMap" }).waitFor();
     const images = await page.locator("[data-grid] img").evaluateAll((els) => els.map((el) => el.getAttribute("alt")));
     if (images.some((alt) => !alt)) throw new Error("every screenshot needs alt text");
   }, page);
