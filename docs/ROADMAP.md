@@ -16,9 +16,13 @@ Her aşama ayrı bir branch ve PR olarak yapılır (`stage/<no>-<kisa-ad>`). Bir
 - [x] Bölümler: Hero (ad, unvan, kısa tanıtım), Projeler (kart: görsel, teknoloji etiketleri, GitHub + canlı demo linki), Beceriler, Hakkımda, İletişim
 - [x] TR / EN dil seçici
 - [x] GitHub Pages'e yayın iş akışı (`deploy.yml`); birim testleri, uçtan uca test ve CI
-- [ ] Yayını açmak (elle): repo public olmalı ve Settings → Pages → Source: GitHub Actions seçilmeli
+- [x] Yayını açmak (elle): repo public olmalı ve Settings → Pages → Source: GitHub Actions seçilmeli
 
 ## Aşama 2 — CV oluşturucu sayfası
 - [x] Mevcut CV aracı `/cv-builder` sayfası olarak taşınır, yeni tasarıma uyarlanır (TR + EN)
 - [x] PDF olarak indir, verileri tarayıcıda sakla, 2 hazır şablon
 - [x] Lighthouse 95+ (performans, erişilebilirlik) — CI'da kontrol ediliyor; README (TR + EN)
+
+## Ek — Canlı demolar
+- [x] Mobil projelerin (Kawaii Friend, CafeMap, Bugün Ne Yapalım?) GitHub Pages web demoları kartlara bağlandı
+- [ ] .NET projeleri ve CineList için demolar (sunucu gerekiyor)

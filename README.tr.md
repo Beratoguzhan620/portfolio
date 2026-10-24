@@ -9,6 +9,8 @@ Kişisel sitem: yaptığım projeler, kullandığım araçlar, kısa bir tanıt�
 ![Lighthouse 95+](https://img.shields.io/badge/Lighthouse-95%2B-2F7D4F)
 ![Lisans: MIT](https://img.shields.io/badge/lisans-MIT-green)
 
+**Canlı site:** [beratoguzhan620.github.io/portfolio](https://beratoguzhan620.github.io/portfolio/)
+
 ![Ana sayfa](docs/screenshots/home.png)
 
 ## Deneme
@@ -119,9 +121,7 @@ src/
 
 ## Yol haritası ve eksikler
 
-- GitHub Pages'te yayın (repo'nun public olması gerekiyor, yukarıya bak).
-- Projeler yayına alınınca kartlara canlı demo linkleri.
-- Proje repolarının çoğu şimdilik private; public yapılana kadar "Kodu gör" linkleri yalnızca bana açılıyor.
+- Sunucu gerektiren .NET projeleri ve CineList için canlı demolar; mobil uygulamaların kartları web demolarına bağlanıyor.
 
 ## Arka plan
 
