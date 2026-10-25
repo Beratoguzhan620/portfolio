@@ -25,7 +25,10 @@ export type Project = {
   /** Phone screenshots are shown whole; desktop ones fill the frame. */
   frame: "screen" | "phone";
   repo: string;
+  /** Live web demo, when the project has one. */
   demo?: string;
+  /** Recorded walkthrough (the demo GIF in the repository), shown when there is no live demo. */
+  walkthrough?: string;
 };
 
 const GITHUB = "https://github.com/Beratoguzhan620";
@@ -45,6 +48,7 @@ export const projects: Project[] = [
     image: marketly,
     frame: "screen",
     repo: `${GITHUB}/marketly`,
+    walkthrough: `${GITHUB}/marketly/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "stockly",
@@ -58,6 +62,7 @@ export const projects: Project[] = [
     image: stockly,
     frame: "screen",
     repo: `${GITHUB}/stockly`,
+    walkthrough: `${GITHUB}/stockly/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "edutrack",
@@ -71,6 +76,7 @@ export const projects: Project[] = [
     image: edutrack,
     frame: "screen",
     repo: `${GITHUB}/EduTrack`,
+    walkthrough: `${GITHUB}/EduTrack/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "inkwell",
@@ -84,6 +90,7 @@ export const projects: Project[] = [
     image: inkwell,
     frame: "screen",
     repo: `${GITHUB}/inkwell`,
+    walkthrough: `${GITHUB}/inkwell/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "event-tracker",
@@ -97,6 +104,7 @@ export const projects: Project[] = [
     image: eventTracker,
     frame: "screen",
     repo: `${GITHUB}/event-tracker`,
+    walkthrough: `${GITHUB}/event-tracker/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "rollcall",
@@ -110,6 +118,7 @@ export const projects: Project[] = [
     image: rollcall,
     frame: "screen",
     repo: `${GITHUB}/rollcall`,
+    walkthrough: `${GITHUB}/rollcall/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "kawaii-friend",
@@ -151,6 +160,7 @@ export const projects: Project[] = [
     image: cinelist,
     frame: "screen",
     repo: `${GITHUB}/cinelist`,
+    demo: "https://beratoguzhan620.github.io/cinelist/",
   },
   {
     slug: "bugun-ne-yapalim",
@@ -178,6 +188,7 @@ export const projects: Project[] = [
     image: studentCli,
     frame: "screen",
     repo: `${GITHUB}/student-cli`,
+    walkthrough: `${GITHUB}/student-cli/blob/main/docs/screenshots/demo.gif`,
   },
 ];
 

@@ -24,7 +24,7 @@ pnpm dev        # http://localhost:4321/portfolio/
 
 - **Home page:**
   - An introduction, then the projects, skills, about and contact sections.
-  - Each project card has a screenshot, the tech stack, a link to the code and, when there is one, a live demo.
+  - Each project card has a screenshot, the tech stack, a link to the code, and a live demo or a recorded walkthrough.
   - The project list can be filtered by web, mobile or tool; without JavaScript every project stays visible.
 - **Turkish and English:** Turkish lives at `/` and English at `/en/`. The language switch keeps you on the same page, and each page declares its alternate with `hreflang`.
 - **CV builder** (`/cv-builder/`):
@@ -121,7 +121,7 @@ src/
 
 ## Roadmap and known gaps
 
-- Live demos for the .NET and CineList projects, which need a server; the mobile apps already link to their web demos.
+- Live demos for the .NET projects, which need a server. Until then their cards link to a recorded walkthrough; the Expo apps link to their web demos.
 
 ## Background
 

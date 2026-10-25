@@ -24,7 +24,7 @@ pnpm dev        # http://localhost:4321/portfolio/
 
 - **Ana sayfa:**
   - Bir tanıtım, ardından projeler, beceriler, hakkımda ve iletişim bölümleri.
-  - Her proje kartında ekran görüntüsü, teknolojiler, kodun linki ve varsa canlı demo var.
+  - Her proje kartında ekran görüntüsü, teknolojiler, kodun linki ve bir canlı demo ya da kayıtlı tanıtım var.
   - Proje listesi web, mobil ya da araç olarak süzülebilir; JavaScript kapalıysa bütün projeler görünür kalır.
 - **Türkçe ve İngilizce:** Türkçe `/`, İngilizce `/en/` adresinde. Dil düğmesi aynı sayfada tutar; her sayfa diğer dildeki karşılığını `hreflang` ile bildirir.
 - **CV oluşturucu** (`/cv-builder/`):
@@ -121,7 +121,7 @@ src/
 
 ## Yol haritası ve eksikler
 
-- Sunucu gerektiren .NET projeleri ve CineList için canlı demolar; mobil uygulamaların kartları web demolarına bağlanıyor.
+- Sunucu gerektiren .NET projeleri için canlı demolar. O zamana kadar kartları kayıtlı bir tanıtıma bağlanıyor; Expo uygulamalarının kartları web demolarına gidiyor.
 
 ## Arka plan
 
