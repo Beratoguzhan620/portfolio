@@ -9,6 +9,8 @@ My personal site: the projects I have built, the tools I use, a short introducti
 ![Lighthouse 95+](https://img.shields.io/badge/Lighthouse-95%2B-2F7D4F)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
+**Live site:** [beratoguzhan620.github.io/portfolio](https://beratoguzhan620.github.io/portfolio/)
+
 ![Home page](docs/screenshots/home.png)
 
 ## Try it
@@ -119,9 +121,7 @@ src/
 
 ## Roadmap and known gaps
 
-- Publishing on GitHub Pages (needs the repository to be public, see above).
-- Live demo links on the project cards once the projects are hosted.
-- Most project repositories are private for now, so their "View code" links only work for me until they are made public.
+- Live demos for the .NET and CineList projects, which need a server; the mobile apps already link to their web demos.
 
 ## Background
 
