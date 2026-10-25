@@ -46,8 +46,15 @@ for (const [device, viewport, scheme] of [
     if (code.length < 11 || code.length + demos.length !== links.length) {
       throw new Error(`unexpected links: ${links.join(", ")}`);
     }
-    if (demos.length < 3) throw new Error(`expected the mobile apps to link their demos, got ${demos.length}`);
-    await page.getByRole("link", { name: "Canlı demo: CafeMap" }).waitFor();
+    if (demos.length < 4) throw new Error(`expected the web demos to be linked, got ${demos.length}`);
+    await page.getByRole("link", { name: "Canlı demo: CineList" }).waitFor();
+    const walkthrough = page.getByRole("link", { name: "Tanıtımı izle: Stockly" });
+    if (!(await walkthrough.getAttribute("href"))?.endsWith("/stockly/blob/main/docs/screenshots/demo.gif")) {
+      throw new Error("Stockly should link its walkthrough");
+    }
+    if ((await page.locator("[data-grid] article").filter({ hasNot: page.getByRole("link", { name: /^(Canlı demo|Tanıtımı izle):/ }) }).count()) !== 0) {
+      throw new Error("every project should have a demo or a walkthrough");
+    }
     const images = await page.locator("[data-grid] img").evaluateAll((els) => els.map((el) => el.getAttribute("alt")));
     if (images.some((alt) => !alt)) throw new Error("every screenshot needs alt text");
   }, page);
