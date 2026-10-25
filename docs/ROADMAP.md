@@ -25,4 +25,6 @@ Her aşama ayrı bir branch ve PR olarak yapılır (`stage/<no>-<kisa-ad>`). Bir
 
 ## Ek — Canlı demolar
 - [x] Mobil projelerin (Kawaii Friend, CafeMap, Bugün Ne Yapalım?) GitHub Pages web demoları kartlara bağlandı
-- [ ] .NET projeleri ve CineList için demolar (sunucu gerekiyor)
+- [x] CineList için tarayıcıda çalışan demo modu ve GitHub Pages demosu
+- [x] .NET projelerinin ve Student CLI'ın kartlarında "Tanıtımı izle" (repodaki demo GIF'i)
+- [ ] .NET projeleri için canlı demolar (sunucu gerekiyor)
