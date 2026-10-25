@@ -17,8 +17,16 @@ const email = "beratoguzhan620@gmail.com";
         <a href={`mailto:${email}`}>{email}</a>
       </li>
       <li>
+        <span class="label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/berat-oguzhan-turgut" rel="me">linkedin.com/in/berat-oguzhan-turgut</a>
+      </li>
+      <li>
         <span class="label">GitHub</span>
         <a href="https://github.com/Beratoguzhan620" rel="me">github.com/Beratoguzhan620</a>
+      </li>
+      <li>
+        <span class="label">{lang === "tr" ? "Konum" : "Location"}</span>
+        <span>Samsun, Türkiye</span>
       </li>
     </ul>
     <a class="button button--primary" href={`mailto:${email}`}>{t(lang, "contact.email")}</a>
