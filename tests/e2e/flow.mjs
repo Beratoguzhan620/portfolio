@@ -29,7 +29,7 @@ for (const [device, viewport, scheme] of [
     const cards = page.locator("[data-grid] article");
     const total = await cards.count();
     const visible = () => cards.evaluateAll((els) => els.filter((el) => !el.hidden).length);
-    for (const [label, expected] of [["Web", 6], ["Mobil", 4], ["Araç", 1]]) {
+    for (const [label, expected] of [["Web", 6], ["Backend", 1], ["Mobil", 4], ["Araç", 1]]) {
       const button = page.getByRole("button", { name: new RegExp(`^${label}`) });
       await button.click();
       if ((await button.getAttribute("aria-pressed")) !== "true") throw new Error(`${label} should be pressed`);

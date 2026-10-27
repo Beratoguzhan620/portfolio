@@ -8,12 +8,13 @@ import eventTracker from "../assets/projects/event-tracker.png";
 import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
 import marketly from "../assets/projects/marketly.png";
+import miniBankingApi from "../assets/projects/mini-banking-api.png";
 import rollcall from "../assets/projects/rollcall.png";
 import stockly from "../assets/projects/stockly.png";
 import studentCli from "../assets/projects/student-cli.png";
 import type { Lang } from "../i18n/ui";
 
-export type Category = "web" | "mobile" | "tool";
+export type Category = "web" | "backend" | "mobile" | "tool";
 
 export type Project = {
   slug: string;
@@ -36,6 +37,20 @@ const GITHUB = "https://github.com/Beratoguzhan620";
 // Web demos published from each repository to GitHub Pages.
 
 export const projects: Project[] = [
+  {
+    slug: "mini-banking-api",
+    name: "Mini Banking API",
+    category: "backend",
+    summary: {
+      tr: "Çift taraflı defterle çalışan bir bankacılık API'si: idempotent istekler, aynı anda gelen transferlerde bile tutarlı bakiyeler, yalnızca ekleme kabul eden denetim kaydı ve mutabakat raporu.",
+      en: "A banking API on a double-entry ledger: idempotent requests, balances that stay correct under concurrent transfers, an append-only audit trail and a reconciliation report.",
+    },
+    stack: ["ASP.NET Core", "EF Core", "PostgreSQL", "Testcontainers", "Docker"],
+    image: miniBankingApi,
+    frame: "screen",
+    repo: `${GITHUB}/mini-banking-api`,
+    walkthrough: `${GITHUB}/mini-banking-api/blob/main/docs/screenshots/demo.gif`,
+  },
   {
     slug: "marketly",
     name: "Marketly",
@@ -192,4 +207,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const categories: Category[] = ["web", "mobile", "tool"];
+export const categories: Category[] = ["web", "backend", "mobile", "tool"];
