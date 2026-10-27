@@ -4,7 +4,7 @@ export type Lang = keyof typeof languages;
 export const ui = {
   tr: {
     "meta.title": "Berat Oğuzhan Turğut · Yazılım Geliştirici",
-    "meta.description": "C# ve .NET ile web uygulamaları, Expo ile mobil uygulamalar geliştiren Berat Oğuzhan Turğut'un projeleri.",
+    "meta.description": "C# ve .NET ile web uygulamaları ve API'ler, Expo ile mobil uygulamalar geliştiren Berat Oğuzhan Turğut'un projeleri.",
     "nav.projects": "Projeler",
     "nav.skills": "Beceriler",
     "nav.about": "Hakkımda",
@@ -14,7 +14,7 @@ export const ui = {
     "nav.language": "Dil",
     "hero.role": "Yazılım Geliştirici",
     "hero.intro":
-      "C# ve .NET ile web uygulamaları, Expo ve React Native ile mobil uygulamalar geliştiriyorum. Bir projeyi çalışır hale getirmekle yetinmiyorum: testini yazıyorum, CI'a bağlıyorum ve başkası açtığında ne yapacağını bilsin diye belgeliyorum.",
+      "C# ve .NET ile web uygulamaları ve API'ler, Expo ve React Native ile mobil uygulamalar geliştiriyorum. Bir projeyi çalışır hale getirmekle yetinmiyorum: testini yazıyorum, CI'a bağlıyorum ve başkası açtığında ne yapacağını bilsin diye belgeliyorum.",
     "hero.projects": "Projelere bak",
     "hero.cv": "CV oluşturucuyu dene",
     "projects.title": "Projeler",
@@ -22,6 +22,7 @@ export const ui = {
     "projects.filter": "Projeleri süz",
     "projects.all": "Tümü",
     "projects.web": "Web",
+    "projects.backend": "Backend",
     "projects.mobile": "Mobil",
     "projects.tool": "Araç",
     "projects.code": "Kodu gör",
@@ -45,7 +46,7 @@ export const ui = {
   },
   en: {
     "meta.title": "Berat Oğuzhan Turğut · Software Developer",
-    "meta.description": "Projects by Berat Oğuzhan Turğut: web apps in C# and .NET, mobile apps with Expo.",
+    "meta.description": "Projects by Berat Oğuzhan Turğut: web apps and APIs in C# and .NET, mobile apps with Expo.",
     "nav.projects": "Projects",
     "nav.skills": "Skills",
     "nav.about": "About",
@@ -55,7 +56,7 @@ export const ui = {
     "nav.language": "Language",
     "hero.role": "Software Developer",
     "hero.intro":
-      "I build web apps with C# and .NET and mobile apps with Expo and React Native. Getting a project to run is only part of it: I write the tests, wire it into CI and document it so the next person knows what to do.",
+      "I build web apps and APIs with C# and .NET, and mobile apps with Expo and React Native. Getting a project to run is only part of it: I write the tests, wire it into CI and document it so the next person knows what to do.",
     "hero.projects": "See the projects",
     "hero.cv": "Try the CV builder",
     "projects.title": "Projects",
@@ -63,6 +64,7 @@ export const ui = {
     "projects.filter": "Filter projects",
     "projects.all": "All",
     "projects.web": "Web",
+    "projects.backend": "Backend",
     "projects.mobile": "Mobile",
     "projects.tool": "Tool",
     "projects.code": "View code",
