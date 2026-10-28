@@ -1,5 +1,6 @@
 import type { ImageMetadata } from "astro";
 
+import backgroundJobs from "../assets/projects/background-jobs.png";
 import bugunNeYapalim from "../assets/projects/bugun-ne-yapalim.png";
 import cafeMap from "../assets/projects/cafe-map.png";
 import cinelist from "../assets/projects/cinelist.png";
@@ -50,6 +51,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/mini-banking-api`,
     walkthrough: `${GITHUB}/mini-banking-api/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "background-jobs",
+    name: "Background Jobs",
+    category: "backend",
+    summary: {
+      tr: "Hangfire ve PostgreSQL ile arka plan işleri: büyük sipariş dosyalarını parça parça içe aktarma, zamanlanmış raporlar, yeniden deneme ve iptal; iki worker'a dağılan ama hiçbir zaman iki kez çalışmayan işler ve yöneticilere özel pano.",
+      en: "Background jobs on Hangfire and PostgreSQL: chunked imports of large order files, scheduled reports, retries and cancellation; work spread over two workers that never runs twice, and a dashboard for admins.",
+    },
+    stack: ["ASP.NET Core", "Hangfire", "PostgreSQL", "Testcontainers", "Playwright"],
+    image: backgroundJobs,
+    frame: "screen",
+    repo: `${GITHUB}/background-jobs`,
+    walkthrough: `${GITHUB}/background-jobs/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
