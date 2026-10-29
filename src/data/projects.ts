@@ -10,6 +10,7 @@ import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
 import marketly from "../assets/projects/marketly.png";
 import miniBankingApi from "../assets/projects/mini-banking-api.png";
+import notificationService from "../assets/projects/notification-service.png";
 import rollcall from "../assets/projects/rollcall.png";
 import stockly from "../assets/projects/stockly.png";
 import studentCli from "../assets/projects/student-cli.png";
@@ -65,6 +66,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/background-jobs`,
     walkthrough: `${GITHUB}/background-jobs/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "notification-service",
+    name: "Notification Service",
+    category: "backend",
+    summary: {
+      tr: "RabbitMQ ile e-posta ve uygulama içi bildirim servisi: Türkçe ve İngilizce sürümlü şablonlar, idempotent istekler, transactional outbox, artan aralıklarla yeniden deneme, yeniden oynatılabilen dead letter'lar ve istekten posta kutusuna OpenTelemetry izleri.",
+      en: "An email and in-app notification service on RabbitMQ: versioned Turkish and English templates, idempotent requests, a transactional outbox, retries with growing delays, dead letters that can be replayed and OpenTelemetry traces from the request to the mailbox.",
+    },
+    stack: ["ASP.NET Core", "RabbitMQ", "PostgreSQL", "OpenTelemetry", "Testcontainers"],
+    image: notificationService,
+    frame: "screen",
+    repo: `${GITHUB}/notification-service`,
+    walkthrough: `${GITHUB}/notification-service/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
