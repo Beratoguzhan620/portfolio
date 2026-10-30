@@ -8,6 +8,7 @@ import edutrack from "../assets/projects/edutrack.png";
 import eventTracker from "../assets/projects/event-tracker.png";
 import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
+import logAnalytics from "../assets/projects/log-analytics.png";
 import marketly from "../assets/projects/marketly.png";
 import miniBankingApi from "../assets/projects/mini-banking-api.png";
 import notificationService from "../assets/projects/notification-service.png";
@@ -80,6 +81,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/notification-service`,
     walkthrough: `${GITHUB}/notification-service/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "log-analytics",
+    name: "Log Analytics",
+    category: "backend",
+    summary: {
+      tr: "PostgreSQL üzerinde log servisi ve paneli: Serilog/Seq uyumlu alım, sınırlı kuyruk ve COPY ile saniyede 20.000'den fazla olay, günlük bölümler, tam metin ve özellik araması, servisler arası izler ve eşik uyarıları.",
+      en: "A log service and dashboard on PostgreSQL: Serilog/Seq-compatible ingestion, more than 20,000 events per second through a bounded queue and COPY, daily partitions, full-text and property search, traces across services and threshold alerts.",
+    },
+    stack: ["ASP.NET Core", "PostgreSQL", "Serilog", "Playwright", "Testcontainers"],
+    image: logAnalytics,
+    frame: "screen",
+    repo: `${GITHUB}/log-analytics-api`,
+    walkthrough: `${GITHUB}/log-analytics-api/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
