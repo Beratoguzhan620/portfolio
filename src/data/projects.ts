@@ -12,6 +12,7 @@ import logAnalytics from "../assets/projects/log-analytics.png";
 import marketly from "../assets/projects/marketly.png";
 import miniBankingApi from "../assets/projects/mini-banking-api.png";
 import notificationService from "../assets/projects/notification-service.png";
+import realtimeChat from "../assets/projects/realtime-chat.png";
 import rollcall from "../assets/projects/rollcall.png";
 import stockly from "../assets/projects/stockly.png";
 import studentCli from "../assets/projects/student-cli.png";
@@ -95,6 +96,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/log-analytics-api`,
     walkthrough: `${GITHUB}/log-analytics-api/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "realtime-chat",
+    name: "Realtime Chat",
+    category: "backend",
+    summary: {
+      tr: "SignalR ile birebir ve grup sohbeti: boşluksuz mesaj numaraları ve kopmadan sonra eksiksiz telafi, mükerrer gönderim koruması, okundu bilgisi, yazıyor ve çevrimiçi durumu; Redis backplane ile nginx arkasında iki API örneği ve React + TypeScript istemcisi.",
+      en: "Direct and group chat over SignalR: gapless message numbers and complete catch-up after a reconnect, duplicate-safe sends, read receipts, typing and presence; two API instances behind nginx on a Redis backplane, with a React and TypeScript client.",
+    },
+    stack: ["ASP.NET Core", "SignalR", "Redis", "PostgreSQL", "React"],
+    image: realtimeChat,
+    frame: "screen",
+    repo: `${GITHUB}/realtime-chat`,
+    walkthrough: `${GITHUB}/realtime-chat/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
