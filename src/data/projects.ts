@@ -11,6 +11,7 @@ import kawaiiFriend from "../assets/projects/kawaii-friend.png";
 import logAnalytics from "../assets/projects/log-analytics.png";
 import marketly from "../assets/projects/marketly.png";
 import miniBankingApi from "../assets/projects/mini-banking-api.png";
+import multiTenantSaas from "../assets/projects/multi-tenant-saas.png";
 import notificationService from "../assets/projects/notification-service.png";
 import realtimeChat from "../assets/projects/realtime-chat.png";
 import rollcall from "../assets/projects/rollcall.png";
@@ -110,6 +111,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/realtime-chat`,
     walkthrough: `${GITHUB}/realtime-chat/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "multi-tenant-saas",
+    name: "Multi-Tenant SaaS",
+    category: "backend",
+    summary: {
+      tr: "Birçok şirketin paylaştığı destek talebi sistemi: EF Core filtreleri ve PostgreSQL satır düzeyi güvenliğiyle iki katmanlı kiracı yalıtımı, eşzamanlılıkta tutan plan sınırları, davetler ve roller, denetim kaydı, herkese açık destek formu ve React yönetim paneli.",
+      en: "A support ticket system shared by many companies: tenant isolation in two layers with EF Core filters and PostgreSQL row-level security, plan limits that hold under concurrency, invitations and roles, an audit log, a public support form and a React admin panel.",
+    },
+    stack: ["ASP.NET Core", "PostgreSQL RLS", "EF Core", "React"],
+    image: multiTenantSaas,
+    frame: "screen",
+    repo: `${GITHUB}/multi-tenant-saas`,
+    walkthrough: `${GITHUB}/multi-tenant-saas/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
