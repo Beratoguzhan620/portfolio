@@ -10,6 +10,7 @@ import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
 import logAnalytics from "../assets/projects/log-analytics.png";
 import marketly from "../assets/projects/marketly.png";
+import microservicesShop from "../assets/projects/microservices-shop.png";
 import miniBankingApi from "../assets/projects/mini-banking-api.png";
 import multiTenantSaas from "../assets/projects/multi-tenant-saas.png";
 import notificationService from "../assets/projects/notification-service.png";
@@ -125,6 +126,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/multi-tenant-saas`,
     walkthrough: `${GITHUB}/multi-tenant-saas/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "microservices-shop",
+    name: "Microservices Shop",
+    category: "backend",
+    summary: {
+      tr: "YARP ağ geçidinin arkasında altı .NET servisine bölünmüş, ortak veritabanı olmayan bir kahve mağazası: RabbitMQ ve MassTransit ile orkestrasyonlu sipariş sagası, transactional outbox, idempotent tüketiciler, aynı anda gelen siparişlerde fazla satış yok, OpenTelemetry izleri ve React mağaza ile yönetim paneli.",
+      en: "A coffee shop split into six .NET services behind a YARP gateway, with no shared database: an orchestrated order saga with RabbitMQ and MassTransit, a transactional outbox, idempotent consumers, no overselling under concurrent checkouts, OpenTelemetry traces and a React storefront with an admin.",
+    },
+    stack: ["ASP.NET Core", "RabbitMQ", "MassTransit", "YARP", "React"],
+    image: microservicesShop,
+    frame: "screen",
+    repo: `${GITHUB}/microservices-shop`,
+    walkthrough: `${GITHUB}/microservices-shop/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
