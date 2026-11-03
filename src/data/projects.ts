@@ -8,6 +8,7 @@ import edutrack from "../assets/projects/edutrack.png";
 import eventTracker from "../assets/projects/event-tracker.png";
 import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
+import knowledgeBase from "../assets/projects/knowledge-base-api.png";
 import logAnalytics from "../assets/projects/log-analytics.png";
 import marketly from "../assets/projects/marketly.png";
 import microservicesShop from "../assets/projects/microservices-shop.png";
@@ -140,6 +141,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/microservices-shop`,
     walkthrough: `${GITHUB}/microservices-shop/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "knowledge-base-api",
+    name: "Knowledge Base",
+    category: "backend",
+    summary: {
+      tr: "Ekibin kendi belgelerinden kaynak göstererek cevap veren bilgi bankası: pgvector ve PostgreSQL tam metin aramasıyla hibrit arama, arka planda indeksleme, akışla gelen numaralı atıflı cevaplar, ölçülerek ayarlanmış “belgelerde yok” eşiği, Ollama ya da OpenAI uyumlu modeller ve React arayüzü.",
+      en: "A knowledge base that answers from a team's own documents with citations: hybrid search with pgvector and PostgreSQL full-text search, background indexing, streamed answers with numbered citations, a measured “not in the documents” threshold, Ollama or any OpenAI-compatible model, and a React app.",
+    },
+    stack: ["ASP.NET Core", "pgvector", "Ollama", "SSE", "React"],
+    image: knowledgeBase,
+    frame: "screen",
+    repo: `${GITHUB}/knowledge-base-api`,
+    walkthrough: `${GITHUB}/knowledge-base-api/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
