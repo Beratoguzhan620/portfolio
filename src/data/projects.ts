@@ -147,8 +147,8 @@ export const projects: Project[] = [
     name: "Knowledge Base",
     category: "backend",
     summary: {
-      tr: "Ekibin kendi belgelerinden kaynak göstererek cevap veren bilgi bankası: pgvector ve PostgreSQL tam metin aramasıyla hibrit arama, arka planda indeksleme, akışla gelen numaralı atıflı cevaplar, ölçülerek ayarlanmış \"belgelerde yok\" eşiği, Ollama ya da OpenAI uyumlu modeller ve React arayüzü.",
-      en: "A knowledge base that answers from a team's own documents with citations: hybrid search with pgvector and PostgreSQL full-text search, background indexing, streamed answers with numbered citations, a measured \"not in the documents\" threshold, Ollama or any OpenAI-compatible model, and a React app.",
+      tr: "Ekibin kendi belgelerinden kaynak göstererek cevap veren bilgi bankası: pgvector ve PostgreSQL tam metin aramasıyla hibrit arama, arka planda indeksleme, akışla gelen numaralı atıflı cevaplar, ölçülerek ayarlanmış “belgelerde yok” eşiği, Ollama ya da OpenAI uyumlu modeller ve React arayüzü.",
+      en: "A knowledge base that answers from a team's own documents with citations: hybrid search with pgvector and PostgreSQL full-text search, background indexing, streamed answers with numbered citations, a measured “not in the documents” threshold, Ollama or any OpenAI-compatible model, and a React app.",
     },
     stack: ["ASP.NET Core", "pgvector", "Ollama", "SSE", "React"],
     image: knowledgeBase,
