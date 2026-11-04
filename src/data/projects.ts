@@ -6,6 +6,7 @@ import cafeMap from "../assets/projects/cafe-map.png";
 import cinelist from "../assets/projects/cinelist.png";
 import edutrack from "../assets/projects/edutrack.png";
 import eventTracker from "../assets/projects/event-tracker.png";
+import gise from "../assets/projects/gise.png";
 import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
 import knowledgeBase from "../assets/projects/knowledge-base-api.png";
@@ -155,6 +156,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/knowledge-base-api`,
     walkthrough: `${GITHUB}/knowledge-base-api/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "gise",
+    name: "Gişe",
+    category: "web",
+    summary: {
+      tr: "Satışın açıldığı an için yapılmış biletleme: oturma planından koltuk seçimi, asla fazla satmayan ayırma, adil bekleme odası, imzalı webhook ile kesinleşen ödeme ve iade, çevrimdışı da doğrulanan imzalı QR biletler ve kapı uygulaması.",
+      en: "Ticketing built for the moment a sale opens: seats picked on a floor plan, holds that never oversell, a fair waiting room, payments and refunds settled by signed webhooks, and signed QR tickets that a gate app checks even offline.",
+    },
+    stack: ["ASP.NET Core", "PostgreSQL", "ECDSA", "React", "Docker"],
+    image: gise,
+    frame: "screen",
+    repo: `${GITHUB}/gise`,
+    walkthrough: `${GITHUB}/gise/blob/main/docs/screenshots/demo.gif`,
   },
   {
     slug: "marketly",
