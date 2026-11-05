@@ -18,6 +18,7 @@ import multiTenantSaas from "../assets/projects/multi-tenant-saas.png";
 import notificationService from "../assets/projects/notification-service.png";
 import realtimeChat from "../assets/projects/realtime-chat.png";
 import rollcall from "../assets/projects/rollcall.png";
+import sahada from "../assets/projects/sahada.png";
 import stockly from "../assets/projects/stockly.png";
 import studentCli from "../assets/projects/student-cli.png";
 import type { Lang } from "../i18n/ui";
@@ -170,6 +171,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/gise`,
     walkthrough: `${GITHUB}/gise/blob/main/docs/screenshots/demo.gif`,
+  },
+  {
+    slug: "sahada",
+    name: "Sahada",
+    category: "web",
+    summary: {
+      tr: "Saha servis yönetimi: önceliğe göre son tarihli iş emirleri, yetenek, boş zaman ve mesafeye göre teknisyen öneren gün panosu ve harita, sinyal yokken de çalışıp işlem günlüğüyle eşitlenen teknisyen PWA'sı, fotoğraflar, imza ve PDF servis raporu.",
+      en: "Field service management: work orders with deadlines set by priority, a day board and map that suggest a technician by skill, free time and distance, a technician PWA that works without signal and syncs an operation log, photos, signatures and a PDF service report.",
+    },
+    stack: ["ASP.NET Core", "PostgreSQL", "MinIO", "React", "Docker"],
+    image: sahada,
+    frame: "screen",
+    repo: `${GITHUB}/sahada`,
+    walkthrough: `${GITHUB}/sahada/blob/main/docs/screenshots/walkthrough.gif`,
   },
   {
     slug: "marketly",
