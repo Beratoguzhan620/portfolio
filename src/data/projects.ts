@@ -10,6 +10,7 @@ import gise from "../assets/projects/gise.png";
 import inkwell from "../assets/projects/inkwell.png";
 import kawaiiFriend from "../assets/projects/kawaii-friend.png";
 import knowledgeBase from "../assets/projects/knowledge-base-api.png";
+import kuryo from "../assets/projects/kuryo.png";
 import logAnalytics from "../assets/projects/log-analytics.png";
 import marketly from "../assets/projects/marketly.png";
 import microservicesShop from "../assets/projects/microservices-shop.png";
@@ -185,6 +186,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/sahada`,
     walkthrough: `${GITHUB}/sahada/blob/main/docs/screenshots/walkthrough.gif`,
+  },
+  {
+    slug: "kuryo",
+    name: "Kuryo",
+    category: "web",
+    summary: {
+      tr: "Kurye sevkiyat sistemi: PostGIS ile en yakın boştaki kuryeye süreli teklif, geçilince sıradakine aktarma, SignalR ve Redis ile canlı operasyon haritası, konum paylaşan kurye PWA'sı ve müşteri için kodlu takip bağlantısı.",
+      en: "Courier dispatch: timed offers to the nearest free courier found with PostGIS, passed down the line when declined, a live operations map over SignalR and Redis, a courier PWA that shares its position, and a tracking link with a delivery code for the customer.",
+    },
+    stack: ["ASP.NET Core", "PostGIS", "SignalR", "Redis", "React"],
+    image: kuryo,
+    frame: "screen",
+    repo: `${GITHUB}/kuryo`,
+    walkthrough: `${GITHUB}/kuryo/blob/main/docs/screenshots/walkthrough.gif`,
   },
   {
     slug: "marketly",
