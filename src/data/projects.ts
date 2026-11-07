@@ -5,6 +5,7 @@ import bugunNeYapalim from "../assets/projects/bugun-ne-yapalim.png";
 import cafeMap from "../assets/projects/cafe-map.png";
 import cinelist from "../assets/projects/cinelist.png";
 import edutrack from "../assets/projects/edutrack.png";
+import emanet from "../assets/projects/emanet.png";
 import eventTracker from "../assets/projects/event-tracker.png";
 import gise from "../assets/projects/gise.png";
 import inkwell from "../assets/projects/inkwell.png";
@@ -200,6 +201,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/kuryo`,
     walkthrough: `${GITHUB}/kuryo/blob/main/docs/screenshots/walkthrough.gif`,
+  },
+  {
+    slug: "emanet",
+    name: "Emanet",
+    category: "web",
+    summary: {
+      tr: "Komşular arası eşya kiralama: veritabanı kısıtıyla çakışması imkânsız takvim, kartta bloke edilen kira ve depozito, anahtarlı yedek ödeme sağlayıcısı, veritabanının dengede tuttuğu çift taraflı defter, kodlu teslim, hasar talebi ve PostGIS ile adresi gizleyen harita araması.",
+      en: "Peer-to-peer rentals: a calendar that cannot be double-booked thanks to a database constraint, rent and deposit held on the card, a keyed stand-in payment provider, a double-entry ledger the database keeps balanced, handovers with codes, damage claims, and map search with PostGIS that keeps addresses private.",
+    },
+    stack: ["ASP.NET Core", "PostGIS", "MinIO", "React"],
+    image: emanet,
+    frame: "screen",
+    repo: `${GITHUB}/emanet`,
+    walkthrough: `${GITHUB}/emanet/blob/main/docs/screenshots/walkthrough.gif`,
   },
   {
     slug: "marketly",
