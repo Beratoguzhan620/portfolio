@@ -23,6 +23,7 @@ import rollcall from "../assets/projects/rollcall.png";
 import sahada from "../assets/projects/sahada.png";
 import stockly from "../assets/projects/stockly.png";
 import studentCli from "../assets/projects/student-cli.png";
+import yoldas from "../assets/projects/yoldas.png";
 import type { Lang } from "../i18n/ui";
 
 export type Category = "web" | "backend" | "mobile" | "tool";
@@ -215,6 +216,20 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/emanet`,
     walkthrough: `${GITHUB}/emanet/blob/main/docs/screenshots/walkthrough.gif`,
+  },
+  {
+    slug: "yoldas",
+    name: "Yoldaş",
+    category: "web",
+    summary: {
+      tr: "Sürücünün güzergâhı üzerindeki yolcuları eşleştiren yolculuk paylaşımı: duraklarla çizilen rota, PostGIS ile güzergâh boyunca arama, mesafeye göre adil fiyat, veritabanı tetikleyicisiyle güzergâhın her parçasında ayrı sayılan koltuklar, SignalR ile canlı araç konumu ve varış saatleri, kodla biniş ve iki yönlü değerlendirme.",
+      en: "Ride sharing that matches passengers along the driver's route: a route drawn by stops, search along it with PostGIS, a fair price by distance, seats counted per part of the route by a database trigger, the car's live position and arrival times over SignalR, boarding with a code, and two-way reviews.",
+    },
+    stack: ["ASP.NET Core", "PostGIS", "SignalR", "React"],
+    image: yoldas,
+    frame: "screen",
+    repo: `${GITHUB}/yoldas`,
+    walkthrough: `${GITHUB}/yoldas/blob/main/docs/screenshots/walkthrough.gif`,
   },
   {
     slug: "marketly",
