@@ -42,6 +42,8 @@ export type Project = {
   demo?: string;
   /** Recorded walkthrough (the demo GIF in the repository), shown when there is no live demo. */
   walkthrough?: string;
+  /** One measured result from the project's README, shown on the card of a featured project. */
+  proof?: Record<Lang, string>;
 };
 
 const GITHUB = "https://github.com/Beratoguzhan620";
@@ -62,6 +64,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/mini-banking-api`,
     walkthrough: `${GITHUB}/mini-banking-api/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Aynı hesaptan aynı anda 100 transfer: bakiye eksiye düşmez, para iki kez taşınmaz.",
+      en: "100 transfers at once from one account: never below zero, never moved twice.",
+    },
   },
   {
     slug: "background-jobs",
@@ -76,6 +82,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/background-jobs`,
     walkthrough: `${GITHUB}/background-jobs/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Aynı anda iki worker'a verilen iş bir kez yapılır; 69 test.",
+      en: "A run handed to two workers at the same moment is done once; 69 tests.",
+    },
   },
   {
     slug: "notification-service",
@@ -90,6 +100,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/notification-service`,
     walkthrough: `${GITHUB}/notification-service/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Outbox, yeniden deneme ve dead-letter tekrarı; RabbitMQ ve Mailpit'e karşı 122 test.",
+      en: "Outbox, retries and dead-letter replay; 122 tests against RabbitMQ and Mailpit.",
+    },
   },
   {
     slug: "log-analytics",
@@ -104,6 +118,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/log-analytics-api`,
     walkthrough: `${GITHUB}/log-analytics-api/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Saniyede 30.294 olay kabul; 500.000 olay 22,5 saniyede kayıtlı.",
+      en: "30,294 events a second accepted; 500,000 stored in 22.5 s.",
+    },
   },
   {
     slug: "realtime-chat",
@@ -118,6 +136,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/realtime-chat`,
     walkthrough: `${GITHUB}/realtime-chat/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "2.000 açık WebSocket; 215.802 mesajın hepsi teslim, p95 44 ms.",
+      en: "2,000 open WebSockets; 215,802 of 215,802 messages delivered, p95 44 ms.",
+    },
   },
   {
     slug: "multi-tenant-saas",
@@ -132,6 +154,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/multi-tenant-saas`,
     walkthrough: `${GITHUB}/multi-tenant-saas/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "2.000 talep yükünde her şirket yalnızca kendi verisini gördü.",
+      en: "Under 2,000 tickets, every company saw only its own data.",
+    },
   },
   {
     slug: "microservices-shop",
@@ -146,6 +172,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/microservices-shop`,
     walkthrough: `${GITHUB}/microservices-shop/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Son 10 ürüne aynı anda 60 müşteri: tam 10 satış, diğer 50'si hiç ödemedi.",
+      en: "60 customers, the last 10 units: exactly 10 sold, the other 50 never charged.",
+    },
   },
   {
     slug: "knowledge-base-api",
@@ -160,6 +190,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/knowledge-base-api`,
     walkthrough: `${GITHUB}/knowledge-base-api/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Hibrit aramada hit@3 %97; 32 cevabın 32'si doğru kaynağı gösteriyor.",
+      en: "Hybrid search hit@3 97%; 32 of 32 answers cite the right passage.",
+    },
   },
   {
     slug: "gise",
@@ -174,6 +208,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/gise`,
     walkthrough: `${GITHUB}/gise/blob/main/docs/screenshots/demo.gif`,
+    proof: {
+      tr: "Aynı anda 1.000 alıcı: 330 koltuk tutuldu, hiçbiri iki kez satılmadı.",
+      en: "1,000 buyers at once: 330 seats held, none sold twice.",
+    },
   },
   {
     slug: "sahada",
@@ -188,6 +226,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/sahada`,
     walkthrough: `${GITHUB}/sahada/blob/main/docs/screenshots/walkthrough.gif`,
+    proof: {
+      tr: "40 telefon aynı anda senkron; yeniden gönderilen 400 işlemin hiçbiri iki kez uygulanmadı.",
+      en: "40 phones syncing at once; 400 resent operations, none applied twice.",
+    },
   },
   {
     slug: "kuryo",
@@ -202,6 +244,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/kuryo`,
     walkthrough: `${GITHUB}/kuryo/blob/main/docs/screenshots/walkthrough.gif`,
+    proof: {
+      tr: "Saniyede 314 istek, hatasız; siparişten ilk teklife p95 35 ms.",
+      en: "314 requests a second with no errors; order to first offer p95 35 ms.",
+    },
   },
   {
     slug: "emanet",
@@ -216,6 +262,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/emanet`,
     walkthrough: `${GITHUB}/emanet/blob/main/docs/screenshots/walkthrough.gif`,
+    proof: {
+      tr: "Aynı günlere 300 istek: hiçbir gün iki kez kiralanmadı, defter dengede.",
+      en: "300 requests for the same days: none booked twice, the ledger balanced.",
+    },
   },
   {
     slug: "yoldas",
@@ -230,6 +280,10 @@ export const projects: Project[] = [
     frame: "screen",
     repo: `${GITHUB}/yoldas`,
     walkthrough: `${GITHUB}/yoldas/blob/main/docs/screenshots/walkthrough.gif`,
+    proof: {
+      tr: "2 saniyede 400 rezervasyon; güzergâhın hiçbir parçasında koltuktan fazla yolcu yok.",
+      en: "400 bookings in 2 s; no part of any route over full.",
+    },
   },
   {
     slug: "marketly",
