@@ -37,7 +37,7 @@ export const ui = {
     "about.title": "Hakkımda",
     "about.body": [
       "Merhaba, ben Berat. Yazılım geliştiriyorum ve öğrenmeye devam ediyorum; şu sıralar .NET ile backend tarafında derinleşirken gerçek dünyaya dönük uygulamalar yapıyorum.",
-      "Buradaki projelerin çoğu bir bootcamp ödevi olarak başladı. Sonra her birini baştan yazdım: ödevin istediğinin üstüne gerçek bir kullanıcının ihtiyaç duyacağı ayrıntıları, testleri ve sade, tutarlı bir tasarımı ekledim.",
+      "İlk projelerim bir bootcamp ödevi olarak başladı; sonra her birini baştan yazıp testlerini ve tutarlı bir tasarımı ekledim. Son 13 projede backend'in zor kısımlarına odaklandım: eşzamanlı isteklerde doğru kalmak, mesajları kaybetmeden kuyruklara taşımak, çevrimdışı çalışan uygulamaları senkronlamak ve bunların her birini yük altında ölçmek.",
       "Sevdiğim iş, karmaşık bir akışı kullanan için basit hale getirmek. Okunaklı kod, küçük ve anlamlı commit'ler, açık bir README benim için işin parçası.",
     ],
     "contact.title": "İletişim",
@@ -83,7 +83,7 @@ export const ui = {
     "about.title": "About",
     "about.body": [
       "Hi, I'm Berat. I'm a software developer who keeps learning; right now I'm going deeper into backend work with .NET while building apps meant for real use.",
-      "Most of the projects here started as bootcamp assignments. I then rewrote each one from the ground up, adding what a real user would need on top of the brief, along with tests and a simple, consistent design.",
+      "My first projects started as bootcamp assignments; I then rewrote each one with tests and a consistent design. In the 13 recent ones I focused on the hard parts of the backend: staying correct under concurrent requests, moving messages through queues without losing them, syncing apps that work offline, and measuring each of them under load.",
       "What I enjoy most is making a complicated flow simple for the person using it. Readable code, small and meaningful commits and a clear README are part of the job for me.",
     ],
     "contact.title": "Contact",
