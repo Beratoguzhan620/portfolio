@@ -10,7 +10,7 @@ const { project, lang, eager = false } = Astro.props;
 const alt = lang === "tr" ? `${project.name} ekran görüntüsü` : `${project.name} screenshot`;
 ---
 
-<article class="card" data-category={project.category}>
+<article class="card" data-category={project.category} data-featured={project.proof ? "true" : undefined}>
   <div class:list={["shot", project.frame]}>
     <Image
       src={project.image}
@@ -25,6 +25,12 @@ const alt = lang === "tr" ? `${project.name} ekran görüntüsü` : `${project.n
   <div class="body">
     <h3>{project.name}</h3>
     <p class="muted">{project.summary[lang]}</p>
+    {project.proof && (
+      <p class="proof">
+        <span class="proof-label">{t(lang, "projects.measured")}</span>
+        {project.proof[lang]}
+      </p>
+    )}
     <ul class="stack" aria-label={lang === "tr" ? "Teknolojiler" : "Technologies"}>
       {project.stack.map((item) => <li class="tag">{item}</li>)}
     </ul>
@@ -93,6 +99,23 @@ const alt = lang === "tr" ? `${project.name} ekran görüntüsü` : `${project.n
   }
   .body p {
     font-size: 15px;
+  }
+  .body .proof {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 10px 12px;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    background: var(--surface-2);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .proof-label {
+    font: 500 11px/1.2 var(--mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
   .stack {
     display: flex;

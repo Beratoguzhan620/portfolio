@@ -25,6 +25,15 @@ describe("projects", () => {
     expect(summaries).toHaveLength(slugs.length);
   });
 
+  it("gives each featured project a measured result in both languages", () => {
+    const proofs = [...source.matchAll(/proof: \{\s*tr: "([^"]+)",\s*en: "([^"]+)",/g)];
+    expect(proofs.length).toBeGreaterThanOrEqual(13);
+    for (const [, tr, en] of proofs) {
+      expect(tr.length).toBeLessThanOrEqual(110);
+      expect(en.length).toBeLessThanOrEqual(110);
+    }
+  });
+
   it("links every project to its repository", () => {
     const repos = [...source.matchAll(/repo: `\$\{GITHUB\}\/([^`]+)`/g)].map((match) => match[1]);
     expect(repos).toHaveLength(slugs.length);

@@ -6,6 +6,7 @@ import ProjectCard from "./ProjectCard.astro";
 const { lang } = Astro.props as { lang: Lang };
 const filters = [
   { value: "all", label: t(lang, "projects.all"), count: projects.length },
+  { value: "featured", label: t(lang, "projects.featured"), count: projects.filter((project) => project.proof).length },
   ...categories.map((category) => ({
     value: category,
     label: t(lang, `projects.${category}`),
@@ -50,7 +51,7 @@ const filters = [
     for (const other of group.querySelectorAll("button")) other.setAttribute("aria-pressed", String(other === button));
     let shown = 0;
     for (const card of cards) {
-      const match = filter === "all" || card.dataset.category === filter;
+      const match = filter === "all" || (filter === "featured" ? card.dataset.featured === "true" : card.dataset.category === filter);
       card.hidden = !match;
       if (match) shown += 1;
     }
