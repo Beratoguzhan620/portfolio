@@ -48,7 +48,8 @@ export type Project = {
 
 const GITHUB = "https://github.com/Beratoguzhan620";
 
-// Web demos published from each repository to GitHub Pages.
+// Web demos published from each repository to GitHub Pages, or (for the .NET services) running on a free Render
+// instance with the database on Neon, which sleeps when nobody visits.
 
 export const projects: Project[] = [
   {
@@ -63,6 +64,7 @@ export const projects: Project[] = [
     image: miniBankingApi,
     frame: "screen",
     repo: `${GITHUB}/mini-banking-api`,
+    demo: "https://mini-banking-api-7pdz.onrender.com/scalar",
     walkthrough: `${GITHUB}/mini-banking-api/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "Aynı hesaptan aynı anda 100 transfer: bakiye eksiye düşmez, para iki kez taşınmaz.",
@@ -81,6 +83,7 @@ export const projects: Project[] = [
     image: backgroundJobs,
     frame: "screen",
     repo: `${GITHUB}/background-jobs`,
+    demo: "https://background-jobs-demo.onrender.com/scalar",
     walkthrough: `${GITHUB}/background-jobs/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "Aynı anda iki worker'a verilen iş bir kez yapılır; 69 test.",
@@ -117,6 +120,7 @@ export const projects: Project[] = [
     image: logAnalytics,
     frame: "screen",
     repo: `${GITHUB}/log-analytics-api`,
+    demo: "https://log-analytics-demo.onrender.com",
     walkthrough: `${GITHUB}/log-analytics-api/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "Saniyede 30.294 olay kabul; 500.000 olay 22,5 saniyede kayıtlı.",
@@ -153,6 +157,7 @@ export const projects: Project[] = [
     image: multiTenantSaas,
     frame: "screen",
     repo: `${GITHUB}/multi-tenant-saas`,
+    demo: "https://helpdesk-demo-4q7z.onrender.com",
     walkthrough: `${GITHUB}/multi-tenant-saas/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "2.000 talep yükünde her şirket yalnızca kendi verisini gördü.",
@@ -207,6 +212,7 @@ export const projects: Project[] = [
     image: gise,
     frame: "screen",
     repo: `${GITHUB}/gise`,
+    demo: "https://gise-demo.onrender.com",
     walkthrough: `${GITHUB}/gise/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "Aynı anda 1.000 alıcı: 330 koltuk tutuldu, hiçbiri iki kez satılmadı.",
@@ -279,6 +285,7 @@ export const projects: Project[] = [
     image: yoldas,
     frame: "screen",
     repo: `${GITHUB}/yoldas`,
+    demo: "https://yoldas-demo.onrender.com",
     walkthrough: `${GITHUB}/yoldas/blob/main/docs/screenshots/walkthrough.gif`,
     proof: {
       tr: "2 saniyede 400 rezervasyon; güzergâhın hiçbir parçasında koltuktan fazla yolcu yok.",

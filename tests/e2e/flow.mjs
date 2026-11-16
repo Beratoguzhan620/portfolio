@@ -42,7 +42,8 @@ for (const [device, viewport, scheme] of [
   await step(`${device}: every project card links to its repository`, async () => {
     const links = await page.locator("[data-grid] article a").evaluateAll((els) => els.map((el) => el.href));
     const code = links.filter((link) => link.startsWith("https://github.com/Beratoguzhan620/"));
-    const demos = links.filter((link) => link.startsWith("https://beratoguzhan620.github.io/"));
+    // Web demos on GitHub Pages, and the .NET services running on Render.
+    const demos = links.filter((link) => link.startsWith("https://beratoguzhan620.github.io/") || /^https:\/\/[a-z0-9-]+\.onrender\.com\//.test(link));
     if (code.length < 11 || code.length + demos.length !== links.length) {
       throw new Error(`unexpected links: ${links.join(", ")}`);
     }
