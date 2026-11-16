@@ -37,7 +37,11 @@ const alt = lang === "tr" ? `${project.name} ekran görüntüsü` : `${project.n
     <div class="links">
       <a href={project.repo} aria-label={`${t(lang, "projects.code")}: ${project.name}`}>{t(lang, "projects.code")}</a>
       {project.demo ? (
-        <a href={project.demo} aria-label={`${t(lang, "projects.demo")}: ${project.name}`}>{t(lang, "projects.demo")}</a>
+        <a
+          href={project.demo}
+          aria-label={`${t(lang, "projects.demo")}: ${project.name}`}
+          title={project.demo.includes(".onrender.com") ? t(lang, "projects.demoHint") : undefined}
+        >{t(lang, "projects.demo")}</a>
       ) : (
         project.walkthrough && (
           <a href={project.walkthrough} aria-label={`${t(lang, "projects.walkthrough")}: ${project.name}`}>
