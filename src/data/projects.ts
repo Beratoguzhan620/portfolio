@@ -249,6 +249,7 @@ export const projects: Project[] = [
     image: kuryo,
     frame: "screen",
     repo: `${GITHUB}/kuryo`,
+    demo: "https://kuryo-demo.onrender.com",
     walkthrough: `${GITHUB}/kuryo/blob/main/docs/screenshots/walkthrough.gif`,
     proof: {
       tr: "Saniyede 314 istek, hatasız; siparişten ilk teklife p95 35 ms.",
