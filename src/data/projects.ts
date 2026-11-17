@@ -139,6 +139,7 @@ export const projects: Project[] = [
     image: realtimeChat,
     frame: "screen",
     repo: `${GITHUB}/realtime-chat`,
+    demo: "https://realtime-chat-demo-hthr.onrender.com",
     walkthrough: `${GITHUB}/realtime-chat/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "2.000 açık WebSocket; 215.802 mesajın hepsi teslim, p95 44 ms.",
