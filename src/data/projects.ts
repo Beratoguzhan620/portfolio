@@ -232,6 +232,7 @@ export const projects: Project[] = [
     image: sahada,
     frame: "screen",
     repo: `${GITHUB}/sahada`,
+    demo: "https://sahada-demo.onrender.com",
     walkthrough: `${GITHUB}/sahada/blob/main/docs/screenshots/walkthrough.gif`,
     proof: {
       tr: "40 telefon aynı anda senkron; yeniden gönderilen 400 işlemin hiçbiri iki kez uygulanmadı.",
