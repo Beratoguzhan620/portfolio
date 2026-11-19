@@ -49,9 +49,10 @@ for (const [device, viewport, scheme] of [
     }
     if (demos.length < 4) throw new Error(`expected the web demos to be linked, got ${demos.length}`);
     await page.getByRole("link", { name: "Canlı demo: CineList" }).waitFor();
-    const walkthrough = page.getByRole("link", { name: "Tanıtımı izle: Stockly" });
-    if (!(await walkthrough.getAttribute("href"))?.endsWith("/stockly/blob/main/docs/screenshots/demo.gif")) {
-      throw new Error("Stockly should link its walkthrough");
+    await page.getByRole("link", { name: "Canlı demo: Stockly" }).waitFor();
+    const walkthrough = page.getByRole("link", { name: "Tanıtımı izle: Microservices Shop" });
+    if (!(await walkthrough.getAttribute("href"))?.endsWith("/microservices-shop/blob/main/docs/screenshots/demo.gif")) {
+      throw new Error("Microservices Shop should link its walkthrough");
     }
     if ((await page.locator("[data-grid] article").filter({ hasNot: page.getByRole("link", { name: /^(Canlı demo|Tanıtımı izle):/ }) }).count()) !== 0) {
       throw new Error("every project should have a demo or a walkthrough");

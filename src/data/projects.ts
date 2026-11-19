@@ -102,6 +102,7 @@ export const projects: Project[] = [
     image: notificationService,
     frame: "screen",
     repo: `${GITHUB}/notification-service`,
+    demo: "https://notification-service-demo.onrender.com",
     walkthrough: `${GITHUB}/notification-service/blob/main/docs/screenshots/demo.gif`,
     proof: {
       tr: "Outbox, yeniden deneme ve dead-letter tekrarı; RabbitMQ ve Mailpit'e karşı 122 test.",
@@ -270,6 +271,7 @@ export const projects: Project[] = [
     image: emanet,
     frame: "screen",
     repo: `${GITHUB}/emanet`,
+    demo: "https://emanet-demo.onrender.com",
     walkthrough: `${GITHUB}/emanet/blob/main/docs/screenshots/walkthrough.gif`,
     proof: {
       tr: "Aynı günlere 300 istek: hiçbir gün iki kez kiralanmadı, defter dengede.",
@@ -307,6 +309,7 @@ export const projects: Project[] = [
     image: marketly,
     frame: "screen",
     repo: `${GITHUB}/marketly`,
+    demo: "https://marketly-demo.onrender.com",
     walkthrough: `${GITHUB}/marketly/blob/main/docs/screenshots/demo.gif`,
   },
   {
@@ -321,6 +324,7 @@ export const projects: Project[] = [
     image: stockly,
     frame: "screen",
     repo: `${GITHUB}/stockly`,
+    demo: "https://stockly-demo.onrender.com",
     walkthrough: `${GITHUB}/stockly/blob/main/docs/screenshots/demo.gif`,
   },
   {
@@ -335,6 +339,7 @@ export const projects: Project[] = [
     image: edutrack,
     frame: "screen",
     repo: `${GITHUB}/EduTrack`,
+    demo: "https://edutrack-demo.onrender.com",
     walkthrough: `${GITHUB}/EduTrack/blob/main/docs/screenshots/demo.gif`,
   },
   {
@@ -349,6 +354,7 @@ export const projects: Project[] = [
     image: inkwell,
     frame: "screen",
     repo: `${GITHUB}/inkwell`,
+    demo: "https://inkwell-demo-9upx.onrender.com",
     walkthrough: `${GITHUB}/inkwell/blob/main/docs/screenshots/demo.gif`,
   },
   {
@@ -377,6 +383,7 @@ export const projects: Project[] = [
     image: rollcall,
     frame: "screen",
     repo: `${GITHUB}/rollcall`,
+    demo: "https://rollcall-demo.onrender.com",
     walkthrough: `${GITHUB}/rollcall/blob/main/docs/screenshots/demo.gif`,
   },
   {
